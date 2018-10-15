@@ -1,0 +1,9 @@
+<header> 
+    <h1>Weather</h1>
+        <form>
+            <select name="city" ng-model="currentCity">
+                <option value={{cities.city}} ng-repeat="cities in myCities">{{cities.city}}</option>
+            </select>  
+            <input type="button" value="Add" ng-click="sendCity()">
+        </form>  
+</header>

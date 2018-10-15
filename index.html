@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+    <meta charset="UTF-8">
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <title>Weather</title>
+</head>
+<body>
+   <weather-app ng-controller="commonCtrl"></weather-app>
+   
+   <script src="script.js"></script>
+   <script src="./controllers/commonCtrl.controller.js"></script>
+   <script src="./directives/weatherApp.directive.js"></script>
+   <script src="./directives/weatherHeader.directive.js"></script>
+   <script src="./directives/weatherMain.directive.js"></script>
+   <script src="./services/cities.service.js"></script>
+   <script src="./services/getWeather.factory.js"></script>
+</body>
+</html>

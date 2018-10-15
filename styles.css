@@ -1,0 +1,87 @@
+body {
+    background-color: rgb(245, 247, 221);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+header {
+    font-size: 24px;
+    text-align: center;
+}
+
+input {
+    margin-left: 10px;
+    height: 40px;
+    width: 100px;
+    background-color: rgba(102, 102, 102, .4);
+    border: 1px solid rgb(141, 141, 141);
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+input:hover {
+    background-color: rgba(102, 102, 102, .3);
+}
+
+input:active {
+    background-color: rgba(102, 102, 102, .2);
+}
+
+select {
+    width: 180px;
+    height: 40px;
+    font-size: 16px;
+    border: 1px solid rgb(141, 141, 141);
+    outline: none;
+}
+
+ul {
+    padding: 0;
+    font-size: 18px;
+    text-align: center;
+}
+
+.weather-item {
+    width: 300px;
+    height: 50px;
+    background-color: rgb(233, 238, 182);
+    border: 1px solid rgb(141, 141, 141);
+    margin-top: 5px;
+    list-style: none;
+}
+
+.wrap ul li {
+    display: flex;
+    margin: 10px auto;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+
+li img {
+    width: 40px;
+    height: 40px;
+}
+
+li p {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item-info {
+    display: inline-block;
+    vertical-align: middle;
+    width: 200px;
+}
+
+.item-close {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.item-close input {
+    width: 40px;
+
+}
+
