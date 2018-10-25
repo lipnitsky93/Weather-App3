@@ -1,6 +1,30 @@
 app.controller('commonCtrl',['$scope', 'myCities', 'getWeather', function($scope, myCities, getWeather) {
+    
+    
+    $scope.message = "Hello";
+    $scope.password = '';
+
+    $scope.grade = function() {
+        var size = $scope.password.length;
+        if (size > 8) {
+            $scope.strength = 'strong';
+        } else if (size > 3) {
+            $scope.strength = 'medium';
+        } else {
+            $scope.strength = 'weak';
+        }
+    };
+
+
+
+
+
+    
+    
+    
     $scope.listOfShowedCities = [];
     $scope.myCities = myCities;
+    $scope.getWeather = getWeather;
 
     $scope.addCity = function(city) {  
         
@@ -16,7 +40,7 @@ app.controller('commonCtrl',['$scope', 'myCities', 'getWeather', function($scope
 
                  if (isCityShown()) {
                     
-                    getWeather.getCityWeather(item.url).then((response)=> {
+                    $scope.getWeather.getCityWeather(item.url).then((response)=> {
                         item.temperature = '+' + response.data.currently.temperature;
                         item.picture = './images/' + response.data.currently.icon + '.png';
                         $scope.listOfShowedCities.push(item);
@@ -25,13 +49,12 @@ app.controller('commonCtrl',['$scope', 'myCities', 'getWeather', function($scope
                 }
             } 
         }); 
-    }
+    };
 
-    $scope.removeCity = function(index) {
-        console.log(index)
-        console.log(this);
-        console.log($scope.listOfShowedCities);
-        $scope.listOfShowedCities.splice(index, 1);  
-    }
+    $scope.removeCity = function(i, val) {
+        console.log(i);
+        console.log(val);
+        $scope.listOfShowedCities.splice(i, 1);  
+    };
 
 }]);

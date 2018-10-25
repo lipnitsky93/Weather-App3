@@ -2,7 +2,8 @@
     <ul>
         <li class="weather-item" ng-repeat="showedCities in listOfShowedCities track by $index">
             <div class="item-info"><p>{{showedCities.city}} <img ng-src="{{showedCities.picture}}" alt="no image"> <b>{{showedCities.temperature}}</b></p></div>
-            <div class="item-close"><input type="button" value="X" ng-click = "removeCity()($index)" ></div>
+            <div class="item-close"><input type="button" value="X" ng-click = "removeCityFromDirective()($index, privatVal)" ></div>
+            <!-- <div class="item-close"><input type="button" value="X" ng-click = "removeCityFromDirective({ind: $index, mess: privatVal})" ></div> -->
         </li>
     </ul>
 </div>

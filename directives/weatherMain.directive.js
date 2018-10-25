@@ -6,11 +6,11 @@ app.directive('weatherMain', ['$rootScope', function($rootScope) {
         scope: {
             listOfShowedCities: '=',
             addCity: '=',
-            removeCity: '&'
+            removeCityFromDirective: '&'
         },
 
         link: function($scope, element, attr) {
-            
+                $scope.privatVal = 'Hello!'; 
                 var citiesListener = $rootScope.$on('selectedCity', function(event, data) {     
                     $scope.addCity(data);
                 });
