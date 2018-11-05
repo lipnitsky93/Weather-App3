@@ -39,12 +39,13 @@ app.controller('commonCtrl',['$scope', 'myCities', 'getWeather', function($scope
             if(item.city == city) {
 
                  if (isCityShown()) {
-                    
-                    $scope.getWeather.getCityWeather(item.url).then((response)=> {
+                    $scope.getWeather.getCityWeather(item.url).then((response) => {
                         item.temperature = '+' + response.data.currently.temperature;
                         item.picture = './images/' + response.data.currently.icon + '.png';
                         $scope.listOfShowedCities.push(item);
 
+                    }, (responseRej) => {
+                        console.log('DATA ERROR!', responseRej);
                     });
                 }
             } 
@@ -58,3 +59,4 @@ app.controller('commonCtrl',['$scope', 'myCities', 'getWeather', function($scope
     };
 
 }]);
+

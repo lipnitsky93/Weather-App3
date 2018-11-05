@@ -20,7 +20,11 @@ module.exports = function(config) {
       '../script.js',
       '../controllers/*.js',
       '../services/*.js',
-      '../directives/*js',
+      '../directives/*.js',
+      '../templates/*.html',
+      //'../templates/weather-app.template.html',
+      //'../**/*.html',
+      //'../*.html',
       'unit/controllers/*.js',
       'unit/directives/*.js',
       'unit/services/*.js',
@@ -35,8 +39,52 @@ module.exports = function(config) {
 
     // preprocess matching files before serving them to the browser
     // available preprocessors: https://npmjs.org/browse/keyword/karma-preprocessor
+
     preprocessors: {
+      '../templates/*.html': ['ng-html2js']
+      //'../**/*.html': ['ng-html2js'],
+      //'../*.html' : ['ng-html2js']
+      //'../templates/weather-app.template.html': ['ng-html2js']
     },
+
+    // plugins: [
+    //   'karma-chrome-launcher',
+    //   'karma-ng-html2js-preprocessor',
+    //   'karma-jasmine',
+    //   //'jasmine',
+    //   //'jasmine-core',
+    //   'karma-spec-reporter',
+    // ],
+
+    ngHtml2JsPreprocessor: {
+
+      // cacheIdFromPath : function(filepath) {
+      //     console.log("karma, cacheIdFromPath " + filepath);
+      //     var templateFile = filepath.substr(filepath.indexOf("/app/") + 1 );
+      //     console.log("karma, templateFile: " + templateFile);
+      //     return templateFile;
+      // },
+
+      // cacheIdFromPath : function(filepath) {
+      //   return filepath.substr(filepath.indexOf("app")+8);
+      // },
+
+      // stripPrefix: "(.*)project2",
+
+      // cacheIdFromPath: function(filepath) {
+      //   let cacheId = filepath.split('/');
+      //   return cacheId[ cacheId.length - 1 ];
+      // },
+
+
+      // stripPrefix: '../templates/',
+
+
+      // create a single module that contains templates from all the files
+      moduleName: 'templates'
+    },
+
+    
 
 
     // test results reporter to use

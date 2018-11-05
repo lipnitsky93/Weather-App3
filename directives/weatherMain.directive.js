@@ -1,7 +1,7 @@
 app.directive('weatherMain', ['$rootScope', function($rootScope) {
     return {
         
-        templateUrl: './templates/weather-main.template.html',
+        templateUrl: '../templates/weather-main.template.html',
 
         scope: {
             listOfShowedCities: '=',

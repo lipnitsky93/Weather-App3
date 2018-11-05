@@ -1,7 +1,7 @@
 app.directive('weatherHeader', [ function() {
     return {
 
-        templateUrl: './templates/weather-header.template.html',
+        templateUrl: '../templates/weather-header.template.html',
        
         scope: {
             myCities: '=',
